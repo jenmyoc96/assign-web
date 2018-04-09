@@ -60,7 +60,7 @@ class ChocolateController extends Controller
     public function show(Chocolate $chocolate)
     {
         return $this->render('chocolate/show.html.twig', [
-            'chocolate' => $chocolate,
+            'chocolates' => $chocolate,
         ]);
     }
 
