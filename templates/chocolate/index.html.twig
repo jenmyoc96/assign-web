@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chocolate index{% endblock %}
+
+{% block body %}
+
+    <h1>Chocolate index</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ProductName</th>
+                <th>Ingrediants</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>Price</th>
+                <th>Reviewby</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chocolate in chocolates %}
+            <tr>
+                <td>{{ chocolate.id }}</td>
+                <td>{{ chocolate.productName }}</td>
+                <td>{{ chocolate.ingrediants }}</td>
+                <td>{{ chocolate.description }}</td>
+                <td>{{ chocolate.photo }}</td>
+                <td>{{ chocolate.price }}</td>
+                <td>{{ chocolate.reviewby }}</td>
+                <td>{{ chocolate.date ? chocolate.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('chocolate_show', {'id': chocolate.id}) }}">show</a>
+                    <a href="{{ path('chocolate_edit', {'id': chocolate.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('chocolate_new') }}">Create new</a>
+
+{% endblock %}

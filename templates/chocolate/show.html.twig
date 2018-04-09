@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chocolate{% endblock %}
+
+{% block body %}
+
+    <h1>Chocolate</h1>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <td>{{ chocolate.id }}</td>
+        </tr>
+        <tr>
+            <th>ProductName</th>
+            <td>{{ chocolate.productName }}</td>
+        </tr>
+        <tr>
+            <th>Ingrediants</th>
+            <td>{{ chocolate.ingrediants }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ chocolate.description }}</td>
+        </tr>
+        <tr>
+            <th>Photo</th>
+            <td>{{ chocolate.photo }}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>{{ chocolate.price }}</td>
+        </tr>
+        <tr>
+            <th>Reviewby</th>
+            <td>{{ chocolate.reviewby }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ chocolate.date ? chocolate.date|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+
+    </table>
+
+    <a href="{{ path('chocolate_index') }}">back to list</a>
+
+    <a href="{{ path('chocolate_edit', {'id': chocolate.id}) }}">edit</a>
+
+    {% include 'chocolate/_delete_form.html.twig' with {'identifier': chocolate.id} only %}
+
+{% endblock %}
