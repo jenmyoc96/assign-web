@@ -6,9 +6,13 @@
         welcome to my website . this is a php symfony 4 website . this is made as part of a college module.
 
     </p>
+<ul>
+  <li><a href="{{ url('chocolate_index') }}">index</a> </li>
+    <li> <a href="{{ url('chocolate_new') }}"> chocolate new</a></li>
+    <li><a href="{{ url('review_new') }}">review new</a></li>
+  <li>  <a href="{{ url('review_index') }}">review show</a></li>
+</ul>
 
-    <a href="{{ url('chocolate_index') }}">index</a>
-    <a href="{{ url('chocolate_new') }}">new</a>
 
 {% endblock %}
 

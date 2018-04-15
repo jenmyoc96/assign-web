@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation\Category;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ChocolateRepository")
  */
@@ -52,10 +54,28 @@ class Chocolate
      *
      */
     private $productreview;
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Chocolate")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $category;
 
     /**
      * @return mixed
      */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory( Category $category )
+    {
+        $this->category = $category;
+    }
+
     public function getId()
     {
         return $this->id;
@@ -126,12 +146,15 @@ class Chocolate
     }
 
     /**
-     * @param mixed $photo
+     * @param mixed $image
      */
     public function setPhoto($photo): void
     {
-        $this->photo = $photo;
+        $this->image = $photo;
     }
+
+
+
 
     /**
      * @return mixed

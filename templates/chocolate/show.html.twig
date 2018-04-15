@@ -24,8 +24,10 @@
             <td>{{ chocolate.description }}</td>
         </tr>
         <tr>
-            <th>Photo</th>
-            <td>{{ chocolate.photo }}</td>
+            <th>image</th>
+            <td>
+                <img class="items" src="/photo/{{ chocolate.photo}}" alt="{{chocolate.photo }}" >
+            </td>
         </tr>
         <tr>
             <th>Price</th>
@@ -34,6 +36,10 @@
         <tr>
             <th>Reviewby</th>
             <td>{{ chocolate.reviewby }}</td>
+        </tr>
+        <tr>
+            <th>Cateogry</th>
+            <td>{{ product.category.name }}</td>
         </tr>
         <tr>
             <th>Date</th>

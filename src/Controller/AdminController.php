@@ -13,8 +13,10 @@ class AdminController extends Controller
      */
     public function index()
     {
+
         $template = 'admin/index.html.twig';
         $args = [];
-        return $this->render($template, $args);
+        return
+            $this->render($template, $args);
     }
 }
