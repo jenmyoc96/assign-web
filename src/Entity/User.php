@@ -29,11 +29,6 @@ class User implements UserInterface, \Serializable
     private $password;
 
 
-    /**
-     * @ORM\Column(name="is_active", type="boolean")
-     */
-    private $isActive;
-
 
     /**
      * @ORM\Column(type="json_array")
@@ -135,21 +130,6 @@ class User implements UserInterface, \Serializable
     }
 
 
-    /**
-     * @return mixed
-     */
-    public function getIsActive()
-    {
-        return $this->isActive;
-    }
-
-    /**
-     * @param mixed $isActive
-     */
-    public function setIsActive($isActive): void
-    {
-        $this->isActive = $isActive;
-    }
 
     /**
      * @param mixed $username

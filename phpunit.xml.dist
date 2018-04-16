@@ -32,8 +32,9 @@
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
     </listeners>
-    <log type="coverage-html" target="./build/report"/>
-    <logging> <log type="junit" target="./build/logfile.xml"/>
+    <logging>
+        <log type="coverage-html" target="./build/report"/>
+        <log type="junit" target="./build/logfile.xml"/>
         <log type="testdox-html" target="./build/testdox.html"/>
         <log type="testdox-text" target="./build/testdox.txt"/>
         <log type="tap" target="./build/logfile.tap"/>

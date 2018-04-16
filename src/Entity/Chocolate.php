@@ -55,7 +55,6 @@ class Chocolate
      */
     private $productreview;
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Chocolate")
      * @ORM\JoinColumn(nullable=true)
      */
     private $category;
