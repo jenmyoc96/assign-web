@@ -145,11 +145,11 @@ class Chocolate
     }
 
     /**
-     * @param mixed $image
+     * @param mixed $photo
      */
     public function setPhoto($photo): void
     {
-        $this->image = $photo;
+        $this->photo = $photo;
     }
 
 
